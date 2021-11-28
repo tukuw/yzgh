@@ -1,15 +1,17 @@
 <template>
-    <el-container class='layout'>
-      <el-aside width="200px"><Menu /></el-aside>
-      <el-container>
-        <el-header><Header></Header></el-header>
-        <el-main>Main</el-main>
-      </el-container>
+  <el-container class="layout">
+    <el-aside width="auto">
+      <Menubar />
+    </el-aside>
+    <el-container>
+      <el-header><Header /></el-header>
+      <el-main>Main</el-main>
     </el-container>
+  </el-container>
 </template>
 <script setup lang="ts">
-import Header from './header/header.vue'
-import Menu from '@/components/menu.vue';
+import Header from './header/headerv.vue'
+import Menubar from '@/layout/menu/menu.vue';
 </script>
 <style>
 .layout{

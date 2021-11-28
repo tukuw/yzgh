@@ -1,4 +1,31 @@
-[
+<template>
+  <el-menu
+    default-active="2"
+    class="el-menu-vertical-demo"
+    :collapse="isCollapse"
+    @open="handleOpen"
+    @close="handleClose"
+  >
+    
+  </el-menu>
+</template>
+
+<script setup lang="ts">
+import {  reactive, ref } from 'vue'
+import {
+  Location,
+  Document,
+  Menu as IconMenu,
+  Setting,
+} from '@element-plus/icons'
+    const isCollapse = ref(false)
+    const handleOpen = (key : string | number, keyPath: string) => {
+      console.log(key, keyPath)
+    }
+    const handleClose = (key : string | number, keyPath: string) => {
+      console.log(key, keyPath)
+    }
+let menulist= reactive([
   {
     "path": "/system",
     "component": "Layout",
@@ -135,4 +162,14 @@
       }
     ]
   }
-]
+])
+      
+
+</script>
+
+<style scoped>
+.el-menu-vertical-demo:not(.el-menu--collapse) {
+  width: 230px;
+  min-height: 400px;
+}
+</style>
