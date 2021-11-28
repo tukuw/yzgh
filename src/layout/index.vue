@@ -1,29 +1,20 @@
-<script setup lang="ts">
-import { ref,computed } from 'vue'
-import {useStore} from '@/store/index'
-import menu from './menu.vue'
-import header from '../layout/header/header.vue'
-const store=useStore();
-const count=ref(0)
-
-const addBtn=()=>{
-  store.commit('setcount',++count.value)
-}
-</script>
 <template>
-  <el-container>
-    <el-aside width="200px"></el-aside>
-    <menu></menu>
-    <el-container>
-      <el-header>
-        <header></header>
-      </el-header>
-      <el-main>Main</el-main>
+    <el-container class='layout'>
+      <el-aside width="200px"><Menu /></el-aside>
+      <el-container>
+        <el-header><Header></Header></el-header>
+        <el-main>Main</el-main>
+      </el-container>
     </el-container>
-  </el-container>
 </template>
-
-<style scoped>
+<script setup lang="ts">
+import Header from './header/header.vue'
+import Menu from '@/components/menu.vue';
+</script>
+<style>
+.layout{
+    height: 100%;
+}
 .el-header,
 .el-footer {
   background-color: #b3c0d1;
